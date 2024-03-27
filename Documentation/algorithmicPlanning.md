@@ -65,9 +65,21 @@ Then 1 ton of the chosen mineral should be added to the inventory of the active 
     Have we defined the CSS classes for each component?
     Yes, in the wireframe
 
-    Do we know which modules need to be created, and have the responsibility documented for each one?
-    Facility minerals box module, space cart box module, drop down box module, colony box module. Main
+    ## Do we know which modules need to be created, and have the responsibility documented for each one?
+        -facility-Minerals-Box-Module, 
+        -space-Cart-Box-Module: purchase button, dynamically displays radio button choice  
+        -drop-down-Container-Module, 
+            -facilityDropdownModule: *needs placeholder func
+            -governorDropdownModule: *needs placeholder func
+        -colony-Box-Module 
+        -Transient-State-Module: *needs placeholder
+        -main
+        
 
-    Do we know the order in which the modules should be developed?
+    ## Do we know the order in which the modules should be developed?
+        1. main.js should be first as it will import and orchestrate the other modules 
+        2. index.html, as it will need to link main.js
+        3. api/database.json, we only need a couple data points for each array at first
+        4. 
 
 If anyone on the team is unsure about any of these questions, it leads to uncertainty, loss of productivity, and disagreements. We strongly urge you to solve this problem completely before writing any code.

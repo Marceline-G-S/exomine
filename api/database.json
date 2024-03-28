@@ -1,4 +1,105 @@
 {
-    "minerals":[],
-    "facilityMinerals": []
+    "governors":[
+        {
+            "id": 1,
+            "name": "Lex Luthor",
+            "colonyId": 1,
+            "activeStatus": true
+        },
+        {
+            "id": 2,
+            "name": "Governor Granholm",
+            "colonyId": 1,
+            "activeStatus": true
+        },
+        {
+            "id": 3,
+            "name": "Chim Richalds",
+            "colonyId": 1,
+            "activeStatus": false
+        },
+        {
+            "id": 4,
+            "name": "Ted Bloke",
+            "colonyId": 2,
+            "activeStatus": true
+        }
+        
+    ],
+    
+    "colonies": [
+        {
+            "id": 1,
+            "name": "Earth"
+        },
+        {
+            "id": 2,
+            "name": "Pluto"
+        }
+    ],
+    
+    "colonyMinerals":[
+        {
+            "id": 1,
+            "colonyId": 1,
+            "mineralId": 1,
+            "colonyTons": 10000
+        },
+        {
+            "id": 2,
+            "colonyId": 1,
+            "mineralId": 2,
+            "colonyTons": 20000
+        },
+        {
+            "id": 3,
+            "colonyId": 2,
+            "mineralId": 2,
+            "colonyTons": 800
+        }
+    ],
+
+    "minerals":[
+        {
+            "id": 1,
+            "name": "Kryptonite"
+        },
+        {
+            "id": 2,
+            "name": "Steel"
+        }
+    ],
+    
+    "facilityMinerals": [
+        {
+            "id": 1,
+            "mineralId": 1,
+            "facilityId": 1,
+            "facilityTons": 1000
+        },
+        {
+            "id": 1,
+            "mineralId": 2,
+            "facilityId": 1,
+            "facilityTons": 2000
+        }
+    ],
+
+    "miningFacilities": [
+        {
+            "id": 1,
+            "activeStatus": true,
+            "name": "Krypton Inc"
+        },
+        {
+            "id": 2,
+            "activeStatus": true,
+            "name": "Dig 'n' Shit"
+        },
+        {
+            "id": 3,
+            "activeStatus": false,
+            "name": "Minerals 'R' Us"
+        }
+    ]
 }

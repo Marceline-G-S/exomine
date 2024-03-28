@@ -79,7 +79,7 @@ Then 1 ton of the chosen mineral should be added to the inventory of the active 
         2. index.html, as it will need to link main.js
         3. api/database.json, we only need a couple data points for each array at first
         #4. TransientState.js
-        5. governor.js
+        5. governorDropdown.js
         6. facilityDropdown.js
         7. dropDownContainer.js
         8. facilityChoices.js

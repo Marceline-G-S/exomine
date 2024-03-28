@@ -1,3 +1,14 @@
+import { setColony, setGovernorChoices } from "../TransientState.js"
+
+
+
+const handleGovernorChange = (changeEvent) => {
+    if (changeEvent.target.name === "governors") {
+        const governorId = JSON.parse(changeEvent.target.value)
+        setColony(governorId)
+        setGovernorChoices(governorId)
+    }
+}
 
 
 export const GovernorsList = async () => {
@@ -15,6 +26,7 @@ export const GovernorsList = async () => {
 
                                   
     governorsHTML += `</select> `
+    document.addEventListener("change", handleGovernorChange)
    
     return governorsHTML
 }

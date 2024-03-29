@@ -1,4 +1,5 @@
 import { dropDownContainer } from "./dropdown/dropdownContainer.js";
+import { facilityContainer } from "./facilityChoices.js";
 // import { facilitiesList } from "./dropdown/facilityDropdown.js";
 // import { GovernorsList } from "./dropdown/governorDropdown.js"
 
@@ -12,11 +13,12 @@ const render = async () => {
   // const facilitiesHTML = await facilitiesList();
   // Call the functions created inside of other module
   const dropDownHTML = await dropDownContainer()
-
+  const facilityHTML = await facilityContainer()
 
 
   container.innerHTML = `
                             ${dropDownHTML}
+                            ${facilityHTML}
                           `
 }
 

@@ -67,6 +67,14 @@
         {
             "id": 2,
             "name": "Steel"
+        },
+        {
+            "id": 3,
+            "name": "Iron"
+        },
+        {
+            "id": 4,
+            "name": "Vibrainium"
         }
     ],
     
@@ -78,9 +86,33 @@
             "facilityTons": 1000
         },
         {
-            "id": 1,
+            "id": 2,
             "mineralId": 2,
-            "facilityId": 1,
+            "facilityId": 2,
+            "facilityTons": 2000
+        },
+        {
+            "id": 3,
+            "mineralId": 4,
+            "facilityId": 2,
+            "facilityTons": 2000
+        },
+        {
+            "id": 4,
+            "mineralId": 3,
+            "facilityId": 3,
+            "facilityTons": 2000
+        },
+        {
+            "id": 5,
+            "mineralId": 3,
+            "facilityId": 2,
+            "facilityTons": 2000
+        },
+        {
+            "id": 6,
+            "mineralId": 2,
+            "facilityId": 4,
             "facilityTons": 2000
         }
     ],
@@ -100,6 +132,12 @@
             "id": 3,
             "activeStatus": false,
             "name": "Minerals 'R' Us"
+        },
+        {
+            "id": 4,
+            "activeStatus": true,
+            "name": "Mineral Depot"
         }
+        
     ]
 }

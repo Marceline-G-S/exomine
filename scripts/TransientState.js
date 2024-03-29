@@ -45,13 +45,17 @@ export const setFacilityChoices = (chosenFacility) => {
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
-export const setColony = async(chosenGovernor) => {
+export const setColony = async (chosenGovernor) => {
     const response = await fetch('http://localhost:8088/governors');
     const govArrayFromDatabase = await response.json();
 
-    transientState.colonyChoices = govArrayFromDatabase[chosenGovernor-1].colonyId
+    transientState.colonyChoices = govArrayFromDatabase[chosenGovernor - 1].colonyId
     console.log(transientState)
     document.dispatchEvent(new CustomEvent("stateChanged"))
+}
+
+export const getTransientState = () => {
+    return transientState
 }
 
 

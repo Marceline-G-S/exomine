@@ -28,7 +28,8 @@ export const purchaseMineral = () => {
 const transientState = {
     "governorChoices": 0,
     "facilityChoices": 0,
-    "colonyChoices": 0
+    "colonyChoices": 0,
+    "facilityMineralsChoices": 0
 }
 
 
@@ -52,6 +53,11 @@ export const setColony = async (chosenGovernor) => {
     transientState.colonyChoices = govArrayFromDatabase[chosenGovernor - 1].colonyId
     console.log(transientState)
     document.dispatchEvent(new CustomEvent("stateChanged"))
+}
+
+export const setMineralChoice = (chosenFacilityMineralsId) => {
+    transientState.facilityMineralsChoices = chosenFacilityMineralsId
+    console.log(transientState)
 }
 
 export const getTransientState = () => {

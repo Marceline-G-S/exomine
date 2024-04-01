@@ -25,20 +25,6 @@ export const spaceCartContainer = async () => {
     }
     html += await spacePurchaseButton();
 
-    const correctedColonyMineral =     {
-        "id": 6,
-        "colonyId": 2,
-        "mineralId": 4,
-        "colonyTons": 1
-        }
-
-        await fetch("http://localhost:8088/colonyMinerals/6", {
-        method: 'PUT', 
-        headers: {
-        'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(correctedColonyMineral)
-    })
 
     return html
 }

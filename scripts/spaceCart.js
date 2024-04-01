@@ -2,7 +2,7 @@ import { getTransientState } from "./TransientState.js"
 
 const handleSpacePurchase = async (clickEvent) => {
     if (clickEvent.target.id === "purchaseButton") {
-        await putMineralJoinTables()
+        putMineralJoinTables()
     }
 }
 
@@ -24,6 +24,22 @@ export const spaceCartContainer = async () => {
         html += `${mineralArray[facilityMineralsArray[transientState.facilityMineralsChoices - 1].mineralId - 1].name}`
     }
     html += await spacePurchaseButton();
+
+    const correctedColonyMineral =     {
+        "id": 6,
+        "colonyId": 2,
+        "mineralId": 4,
+        "colonyTons": 1
+        }
+
+        await fetch("http://localhost:8088/colonyMinerals/6", {
+        method: 'PUT', 
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(correctedColonyMineral)
+    })
+
     return html
 }
 
@@ -50,8 +66,11 @@ const putMineralJoinTables = async () =>{
             break; // Exit the loop after finding the matching item
         }
     }
+
+
     let ifMatched = false
     for (const colonyMineral of colonyMineralsArray) {
+        // On the colony minerals join table, match the minerals and colony to find/PUT the correct entry. 
         if ((correctedFacilityMineral.mineralId == colonyMineral.mineralId) && (transientState.colonyChoices == colonyMineral.colonyId)){
             ifMatched = true
             correctedColonyMineral = { ...colonyMineral };
@@ -68,6 +87,8 @@ const putMineralJoinTables = async () =>{
             break
         }
     }
+
+    //If no match is found, POST a new entry.
     if (!ifMatched){
     correctedColonyMineral =     {
         "id": (colonyMineralsArray.length + 1),
@@ -84,7 +105,7 @@ const putMineralJoinTables = async () =>{
         body: JSON.stringify(correctedColonyMineral)
     })}
 
-
+    // PUT to facility minerals to update old listing and remove one ton
     await fetch(`http://localhost:8088/facilityMinerals/${correctedFacilityMineral.id}`, {
         method: 'PUT', 
         headers: {

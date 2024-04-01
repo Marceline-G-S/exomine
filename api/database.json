@@ -46,7 +46,7 @@
       "id": 2,
       "colonyId": 1,
       "mineralId": 2,
-      "colonyTons": 20002
+      "colonyTons": 20004
     },
     {
       "id": 3,
@@ -58,79 +58,13 @@
       "id": 4,
       "colonyId": 1,
       "mineralId": 4,
-      "colonyTons": 1
+      "colonyTons": 2
     },
     {
       "id": 5,
       "colonyId": 1,
-      "mineralId": 2,
-      "colonyTons": 2
-    },
-    {
-      "id": 6,
-      "colonyId": 1,
       "mineralId": 3,
       "colonyTons": 1
-    },
-    {
-      "id": 7,
-      "colonyId": 1,
-      "mineralId": 2,
-      "colonyTons": 2
-    },
-    {
-      "id": 8,
-      "colonyId": 1,
-      "mineralId": 2,
-      "colonyTons": 2
-    },
-    {
-      "id": 9,
-      "colonyId": 2,
-      "mineralId": 4,
-      "colonyTons": 1
-    },
-    {
-      "id": 10,
-      "colonyId": 1,
-      "mineralId": 3,
-      "colonyTons": 1
-    },
-    {
-      "id": 11,
-      "colonyId": 0,
-      "mineralId": 2,
-      "colonyTons": 2
-    },
-    {
-      "id": 12,
-      "colonyId": 1,
-      "mineralId": 3,
-      "colonyTons": 1
-    },
-    {
-      "id": 13,
-      "colonyId": 1,
-      "mineralId": 4,
-      "colonyTons": 1
-    },
-    {
-      "id": 14,
-      "colonyId": 0,
-      "mineralId": 4,
-      "colonyTons": 1
-    },
-    {
-      "id": 15,
-      "colonyId": 1,
-      "mineralId": 3,
-      "colonyTons": 1
-    },
-    {
-      "id": 16,
-      "colonyId": 1,
-      "mineralId": 2,
-      "colonyTons": 2
     }
   ],
   "minerals": [
@@ -162,13 +96,13 @@
       "id": 2,
       "mineralId": 2,
       "facilityId": 2,
-      "facilityTons": 1990
+      "facilityTons": 1988
     },
     {
       "id": 3,
       "mineralId": 4,
       "facilityId": 2,
-      "facilityTons": 1995
+      "facilityTons": 1994
     },
     {
       "id": 4,
@@ -180,7 +114,7 @@
       "id": 5,
       "mineralId": 3,
       "facilityId": 2,
-      "facilityTons": 1998
+      "facilityTons": 1997
     },
     {
       "id": 6,

@@ -1,8 +1,10 @@
+import { colonyBoxContainer } from "./colonyBox.js";
 import { dropDownContainer } from "./dropdown/dropdownContainer.js";
 import { facilityContainer } from "./facilityChoices.js";
 import { spaceCartContainer } from "./spaceCart.js";
 // import { facilitiesList } from "./dropdown/facilityDropdown.js";
 // import { GovernorsList } from "./dropdown/governorDropdown.js"
+
 
 const container = document.querySelector("#container")
 
@@ -16,12 +18,13 @@ const render = async () => {
   const dropDownHTML = await dropDownContainer()
   const facilityHTML = await facilityContainer()
   const spaceCartHTML = await spaceCartContainer()
-
+  const colonyBoxHTML = await colonyBoxContainer()
 
   container.innerHTML = `
                             ${dropDownHTML}
                             ${facilityHTML}
                             ${spaceCartHTML}
+                            ${colonyBoxHTML}
                           `
 }
 

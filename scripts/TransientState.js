@@ -1,6 +1,4 @@
-const state = {
 
-}
 
 export const setFacility = (facilityId) => {
     state.selectedFacility = facilityId
@@ -31,6 +29,7 @@ const transientState = {
     "colonyChoices": 0,
     "facilityMineralsChoices": 0,
 }
+
 
 
 
@@ -69,9 +68,44 @@ export const getTransientState = () => {
     return transientState
 }
 
+export const getColony = async (colonyId) => { 
+    const response = await fetch('http://localhost:8088/colonies');
+    const colonyArrayFromDatabase = await response.json();
+
+        return colonyArrayFromDatabase[colonyId - 1]
+}
+
+export const getColonyMinerals = async (colonyMineralsId) => {  
+    const response = await fetch('http://localhost:8088/colonyMinerals');
+    const colonyMineralsArrayFromDatabase = await response.json();
+
+    return colonyMineralsArrayFromDatabase[colonyMineralsId - 1]
+}
 
 
 
+export const getColonyMineralArray = async (colonyId) => { 
+    let arrayOfALLColonyMinerals = [];
+    const response = await fetch('http://localhost:8088/colonyMinerals');
+    const colonyArrayFromDatabase = await response.json();
+
+    for (const mineralsToColony of colonyArrayFromDatabase) {
+        if ( mineralsToColony.colonyId === colonyId ) {
+            
+            arrayOfALLColonyMinerals.push({...mineralsToColony})   
+        }       
+    }   
+    return arrayOfALLColonyMinerals
+
+}
+
+export const getMineral= async (mineralId) => { 
+    const response = await fetch('http://localhost:8088/minerals');
+    const mineralsArray = await response.json();
+    
+
+return mineralsArray[mineralId - 1]
+}
 
 
 

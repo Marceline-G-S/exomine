@@ -85,6 +85,7 @@ Then 1 ton of the chosen mineral should be added to the inventory of the active 
         8. facilityChoices.js
         9. spaceCart.js
         10. colonyBox.js
+            colony name header, colonyMineral content, transient state
         11. main.css
 
 If anyone on the team is unsure about any of these questions, it leads to uncertainty, loss of productivity, and disagreements. We strongly urge you to solve this problem completely before writing any code.

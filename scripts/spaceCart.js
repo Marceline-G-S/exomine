@@ -2,7 +2,7 @@ import { getTransientState } from "./TransientState.js"
 
 const handleSpacePurchase = async (clickEvent) => {
     if (clickEvent.target.id === "purchaseButton") {
-        putMineralJoinTables()
+        await putMineralJoinTables()
     }
 }
 
@@ -45,14 +45,16 @@ const putMineralJoinTables = async () =>{
 
     for (const facilityMineral of facilityMineralsArray) {
         if (transientState.facilityMineralsChoices == facilityMineral.id){
-            correctedFacilityMineral = facilityMineral
-            correctedFacilityMineral.facilityTons -= 1
+            correctedFacilityMineral = { ...facilityMineral }; // Copy the object
+            correctedFacilityMineral.facilityTons -= 1;
+            break; // Exit the loop after finding the matching item
         }
     }
-
+    let ifMatched = false
     for (const colonyMineral of colonyMineralsArray) {
-        if ((correctedFacilityMineral.mineralId == colonyMineral.mineralId) && (transientState.colonyChoices == colonyMineral.id)){
-            correctedColonyMineral = colonyMineral
+        if ((correctedFacilityMineral.mineralId == colonyMineral.mineralId) && (transientState.colonyChoices == colonyMineral.colonyId)){
+            ifMatched = true
+            correctedColonyMineral = { ...colonyMineral };
             correctedColonyMineral.colonyTons += 1
             console.log(correctedColonyMineral)
 
@@ -63,23 +65,24 @@ const putMineralJoinTables = async () =>{
             },
             body: JSON.stringify(correctedColonyMineral) 
             })
-
-        }else {
-            correctedColonyMineral =     {
-                "id": (colonyMineralsArray.length + 1),
-                "colonyId": transientState.colonyChoices,
-                "mineralId": correctedFacilityMineral.mineralId,
-                "colonyTons": 1
-                }
-
-                await fetch(`http://localhost:8088/colonyMinerals/`, {
-                method: 'POST', 
-                headers: {
-                'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(correctedColonyMineral)
-            })
+            break
+        }
     }
+    if (!ifMatched){
+    correctedColonyMineral =     {
+        "id": (colonyMineralsArray.length + 1),
+        "colonyId": transientState.colonyChoices,
+        "mineralId": correctedFacilityMineral.mineralId,
+        "colonyTons": 1
+        }
+
+        await fetch("http://localhost:8088/colonyMinerals/", {
+        method: 'POST', 
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(correctedColonyMineral)
+    })}
 
 
     await fetch(`http://localhost:8088/facilityMinerals/${correctedFacilityMineral.id}`, {
@@ -97,7 +100,6 @@ const putMineralJoinTables = async () =>{
  
    // now do whatever you want with the data  
     //console.log(data);
- }
 }
 
 

@@ -46,7 +46,7 @@
       "id": 2,
       "colonyId": 1,
       "mineralId": 2,
-      "colonyTons": 20000
+      "colonyTons": 20002
     },
     {
       "id": 3,
@@ -64,7 +64,7 @@
       "id": 5,
       "colonyId": 1,
       "mineralId": 2,
-      "colonyTons": 1
+      "colonyTons": 2
     },
     {
       "id": 6,
@@ -76,7 +76,61 @@
       "id": 7,
       "colonyId": 1,
       "mineralId": 2,
+      "colonyTons": 2
+    },
+    {
+      "id": 8,
+      "colonyId": 1,
+      "mineralId": 2,
+      "colonyTons": 2
+    },
+    {
+      "id": 9,
+      "colonyId": 2,
+      "mineralId": 4,
       "colonyTons": 1
+    },
+    {
+      "id": 10,
+      "colonyId": 1,
+      "mineralId": 3,
+      "colonyTons": 1
+    },
+    {
+      "id": 11,
+      "colonyId": 0,
+      "mineralId": 2,
+      "colonyTons": 2
+    },
+    {
+      "id": 12,
+      "colonyId": 1,
+      "mineralId": 3,
+      "colonyTons": 1
+    },
+    {
+      "id": 13,
+      "colonyId": 1,
+      "mineralId": 4,
+      "colonyTons": 1
+    },
+    {
+      "id": 14,
+      "colonyId": 0,
+      "mineralId": 4,
+      "colonyTons": 1
+    },
+    {
+      "id": 15,
+      "colonyId": 1,
+      "mineralId": 3,
+      "colonyTons": 1
+    },
+    {
+      "id": 16,
+      "colonyId": 1,
+      "mineralId": 2,
+      "colonyTons": 2
     }
   ],
   "minerals": [
@@ -108,19 +162,19 @@
       "id": 2,
       "mineralId": 2,
       "facilityId": 2,
-      "facilityTons": 1995
+      "facilityTons": 1990
     },
     {
       "id": 3,
       "mineralId": 4,
       "facilityId": 2,
-      "facilityTons": 1998
+      "facilityTons": 1995
     },
     {
       "id": 4,
       "mineralId": 3,
       "facilityId": 3,
-      "facilityTons": 2000
+      "facilityTons": 1997
     },
     {
       "id": 5,
@@ -132,7 +186,7 @@
       "id": 6,
       "mineralId": 2,
       "facilityId": 4,
-      "facilityTons": 2000
+      "facilityTons": 1999
     }
   ],
   "miningFacilities": [

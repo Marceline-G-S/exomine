@@ -28,16 +28,21 @@ export const purchaseMineral = () => {
 const transientState = {
     "governorChoices": 0,
     "facilityChoices": 0,
-    "colonyChoices": 0
+    "colonyChoices": 0,
+    "facilityMineralsChoices": 0,
 }
 
 
 
-export const setGovernorChoices = (chosenGovernor) => {
+export const setGovernorChoices = async (chosenGovernor) => {
     transientState.governorChoices = chosenGovernor
-    console.log(transientState)
+    const response = await fetch('http://localhost:8088/governors');
+    const govArrayFromDatabase = await response.json();
+    transientState.colonyChoices = govArrayFromDatabase[chosenGovernor - 1].colonyId
 
+    console.log(transientState)
 }
+
 // Functions to modify each property of transient state
 export const setFacilityChoices = (chosenFacility) => {
     transientState.facilityChoices = chosenFacility
@@ -50,6 +55,12 @@ export const setColony = async (chosenGovernor) => {
     const govArrayFromDatabase = await response.json();
 
     transientState.colonyChoices = govArrayFromDatabase[chosenGovernor - 1].colonyId
+    console.log(transientState)
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
+
+export const setMineralChoice = (chosenFacilityMineralsId) => {
+    transientState.facilityMineralsChoices = chosenFacilityMineralsId
     console.log(transientState)
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }

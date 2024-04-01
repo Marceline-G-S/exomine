@@ -1,4 +1,12 @@
 import { getTransientState } from "./TransientState.js";
+import { setMineralChoice } from "./TransientState.js";
+
+const handleMineralChoiceChange = (changeEvent) => {
+    if (changeEvent.target.name === "mineralChoice") {
+        const convertedINT = parseInt(changeEvent.target.value)
+        setMineralChoice(convertedINT)
+    }
+}
 
 
 
@@ -21,7 +29,7 @@ export const facilityContainer = async () => {
     if (transientState.facilityChoices != 0) {
 
         HTML += `<h1>${facilitiesArray[transientState.facilityChoices - 1].name}</h1>`
-
+        document.addEventListener("change", handleMineralChoiceChange)
         for (const facilityMinerals of facilityMineralsArray) {
 
             if (facilityMinerals.facilityId === transientState.facilityChoices) {

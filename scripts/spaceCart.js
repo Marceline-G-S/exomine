@@ -24,8 +24,7 @@ export const spaceCartContainer = async () => {
         html += `${mineralArray[facilityMineralsArray[transientState.facilityMineralsChoices - 1].mineralId - 1].name}`
     }
     html += await spacePurchaseButton();
-
-
+    
     return html
 }
 
@@ -34,7 +33,7 @@ export const spaceCartContainer = async () => {
 // Need a put statement for both
 
 
-const putMineralJoinTables = async () =>{
+const putMineralJoinTables = async () => {
     const transientState = getTransientState()
     const getFacilityMinerals = await fetch("http://localhost:8088/facilityMinerals")
     const facilityMineralsArray = await getFacilityMinerals.json()
@@ -52,8 +51,7 @@ const putMineralJoinTables = async () =>{
             break; // Exit the loop after finding the matching item
         }
     }
-
-
+    
     let ifMatched = false
     for (const colonyMineral of colonyMineralsArray) {
         // On the colony minerals join table, match the minerals and colony to find/PUT the correct entry. 
@@ -99,7 +97,7 @@ const putMineralJoinTables = async () =>{
         },
         body: JSON.stringify(correctedFacilityMineral)
     })
-
+    document.dispatchEvent(new CustomEvent("stateChanged"))
     
  
  

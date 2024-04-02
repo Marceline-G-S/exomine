@@ -64,12 +64,7 @@
       "id": 5,
       "colonyId": 1,
       "mineralId": 3,
-      "colonyTons": 3
-    },
-    {
-      "id": 6,
-      "colonyId": 1,
-      "colonyTons": 3
+      "colonyTons": 4
     }
   ],
   "minerals": [
@@ -119,7 +114,7 @@
       "id": 5,
       "mineralId": 3,
       "facilityId": 2,
-      "facilityTons": 1997
+      "facilityTons": 1996
     },
     {
       "id": 6,

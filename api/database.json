@@ -46,7 +46,7 @@
       "id": 2,
       "colonyId": 1,
       "mineralId": 2,
-      "colonyTons": 20006
+      "colonyTons": 20007
     },
     {
       "id": 3,
@@ -64,7 +64,7 @@
       "id": 5,
       "colonyId": 1,
       "mineralId": 3,
-      "colonyTons": 4
+      "colonyTons": 5
     }
   ],
   "minerals": [
@@ -96,7 +96,7 @@
       "id": 2,
       "mineralId": 2,
       "facilityId": 2,
-      "facilityTons": 1988
+      "facilityTons": 1987
     },
     {
       "id": 3,
@@ -114,7 +114,7 @@
       "id": 5,
       "mineralId": 3,
       "facilityId": 2,
-      "facilityTons": 1996
+      "facilityTons": 1995
     },
     {
       "id": 6,

@@ -25,11 +25,11 @@ export const facilityContainer = async () => {
 
     let HTML = `<div class="facilityChoiceBox">`
 
-    HTML += `<h1>Facility Minerals</h1>`
+    HTML += `<h2>Facility Minerals</h2>`
 
     if (transientState.facilityChoices != 0) {
 
-        HTML += `<h1>${facilitiesArray[transientState.facilityChoices - 1].name}</h1>`
+        HTML += `<h3>${facilitiesArray[transientState.facilityChoices - 1].name}</h3>`
         document.addEventListener("change", handleMineralChoiceChange)
 
         for (const facilityMinerals of facilityMineralsArray) {

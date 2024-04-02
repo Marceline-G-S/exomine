@@ -5,25 +5,39 @@
 }
 
 .dropDownContainer {
-    display: flex;
-    flex-basis: 45%;
-    justify-content: space-between;
+    flex-basis: 50%;
+    text-align: center;
+
 }
 
 .colonyBoxContainer {
-    display: flex;
-    flex-basis: auto;
-    justify-content: space-between
+    text-align: center;
+    flex-basis: 50%;
+    
 }
-
-
+.spaceCartContainer {
+    border: 1px dotted blue;
+    flex-basis: 50%;
+    text-align: center;
+}
+.facilityChoiceBox {
+    border: 1px dotted blue;
+    flex-basis: 50%;
+    margin-right: 20px;
+    text-align: center;
+}
 
 .topBox {
     display: flex;
+    justify-content: space-between;
+    flex-basis: 100%;
+    margin-bottom: 10%;
     
 }
 
 .bottomBox {
     display: flex;
     flex-basis: 100%;
+    justify-content: space-between;
+    
 }

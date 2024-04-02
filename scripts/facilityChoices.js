@@ -23,14 +23,15 @@ export const facilityContainer = async () => {
     const getMinerals = await fetch("http://localhost:8088/minerals")
     const mineralArray = await getMinerals.json()
 
+    let HTML = `<div class="facilityChoiceBox">`
 
-    let HTML = `<h1>Facility Minerals</h1>`
+    HTML += `<h1>Facility Minerals</h1>`
 
     if (transientState.facilityChoices != 0) {
 
         HTML += `<h1>${facilitiesArray[transientState.facilityChoices - 1].name}</h1>`
         document.addEventListener("change", handleMineralChoiceChange)
-        
+
         for (const facilityMinerals of facilityMineralsArray) {
 
             if (facilityMinerals.facilityId === transientState.facilityChoices) {
@@ -40,7 +41,7 @@ export const facilityContainer = async () => {
             }
         }
     }
-
+    HTML += `</div>`
     return HTML
 }
 

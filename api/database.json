@@ -64,7 +64,7 @@
       "id": 5,
       "colonyId": 1,
       "mineralId": 3,
-      "colonyTons": 10
+      "colonyTons": 12
     },
     {
       "id": 6,
@@ -120,7 +120,7 @@
       "id": 4,
       "mineralId": 3,
       "facilityId": 3,
-      "facilityTons": 1995
+      "facilityTons": 1993
     },
     {
       "id": 5,

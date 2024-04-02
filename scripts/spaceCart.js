@@ -19,12 +19,14 @@ export const spaceCartContainer = async () => {
     const getFacilityMinerals = await fetch("http://localhost:8088/facilityMinerals")
     const facilityMineralsArray = await getFacilityMinerals.json()
 
-    let html = `<h1>space cart:</h1>`
-    if (transientState.facilityMineralsChoices != 0){
+    let html = `<div class="spaceCartContainer">`
+    html += `<h1>space cart:</h1>`
+    if (transientState.facilityMineralsChoices != 0) {
         html += `${mineralArray[facilityMineralsArray[transientState.facilityMineralsChoices - 1].mineralId - 1].name}`
     }
     html += await spacePurchaseButton();
-    
+
+    html += `</div>`
     return html
 }
 
@@ -45,65 +47,66 @@ const putMineralJoinTables = async () => {
     let correctedColonyMineral = {}
 
     for (const facilityMineral of facilityMineralsArray) {
-        if (transientState.facilityMineralsChoices == facilityMineral.id){
+        if (transientState.facilityMineralsChoices == facilityMineral.id) {
             correctedFacilityMineral = { ...facilityMineral }; // Copy the object
             correctedFacilityMineral.facilityTons -= 1;
             break; // Exit the loop after finding the matching item
         }
     }
-    
+
     let ifMatched = false
     for (const colonyMineral of colonyMineralsArray) {
         // On the colony minerals join table, match the minerals and colony to find/PUT the correct entry. 
-        if ((correctedFacilityMineral.mineralId == colonyMineral.mineralId) && (transientState.colonyChoices == colonyMineral.colonyId)){
+        if ((correctedFacilityMineral.mineralId == colonyMineral.mineralId) && (transientState.colonyChoices == colonyMineral.colonyId)) {
             ifMatched = true
             correctedColonyMineral = { ...colonyMineral };
             correctedColonyMineral.colonyTons += 1
             console.log(correctedColonyMineral)
 
             await fetch(`http://localhost:8088/colonyMinerals/${correctedColonyMineral.id}`, {
-            method: 'PUT', 
-            headers: {
-            'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(correctedColonyMineral) 
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(correctedColonyMineral)
             })
             break
         }
     }
 
     //If no match is found, POST a new entry.
-    if (!ifMatched){
-    correctedColonyMineral =     {
-        "id": (colonyMineralsArray.length + 1),
-        "colonyId": transientState.colonyChoices,
-        "mineralId": correctedFacilityMineral.mineralId,
-        "colonyTons": 1
+    if (!ifMatched) {
+        correctedColonyMineral = {
+            "id": (colonyMineralsArray.length + 1),
+            "colonyId": transientState.colonyChoices,
+            "mineralId": correctedFacilityMineral.mineralId,
+            "colonyTons": 1
         }
 
         await fetch("http://localhost:8088/colonyMinerals/", {
-        method: 'POST', 
-        headers: {
-        'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(correctedColonyMineral)
-    })}
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(correctedColonyMineral)
+        })
+    }
 
     // PUT to facility minerals to update old listing and remove one ton
     await fetch(`http://localhost:8088/facilityMinerals/${correctedFacilityMineral.id}`, {
-        method: 'PUT', 
+        method: 'PUT',
         headers: {
-          'Content-Type': 'application/json'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(correctedFacilityMineral)
     })
     document.dispatchEvent(new CustomEvent("stateChanged"))
-    
- 
- 
-   //const data = await response.json( );
- 
-   // now do whatever you want with the data  
+
+
+
+    //const data = await response.json( );
+
+    // now do whatever you want with the data  
     //console.log(data);
 }
 

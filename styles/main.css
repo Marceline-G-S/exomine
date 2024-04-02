@@ -1,0 +1,29 @@
+#container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.dropDownContainer {
+    display: flex;
+    flex-basis: 45%;
+    justify-content: space-between;
+}
+
+.colonyBoxContainer {
+    display: flex;
+    flex-basis: auto;
+    justify-content: space-between
+}
+
+
+
+.topBox {
+    display: flex;
+    
+}
+
+.bottomBox {
+    display: flex;
+    flex-basis: 100%;
+}

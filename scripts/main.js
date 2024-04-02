@@ -21,10 +21,11 @@ const render = async () => {
   const colonyBoxHTML = await colonyBoxContainer()
 
   container.innerHTML = `
-                            ${dropDownHTML}
-                            ${facilityHTML}
-                            ${spaceCartHTML}
-                            ${colonyBoxHTML}
+                            <div class="topBox">${dropDownHTML}
+                            ${colonyBoxHTML}</div>
+                            <div class="bottomBox">${facilityHTML}
+                            ${spaceCartHTML}</div>
+                            
                           `
 }
 

@@ -16,14 +16,14 @@ export const colonyBoxContainer = async () => {
         
         }
 
-        if (transientState.colonyChoices != 0){
-            let coloniesMinerals = [];
-            coloniesMinerals = await getColonyMineralArray(transientState.colonyChoices);
-            for (const colonyMin of coloniesMinerals) {
-                const mineral = await getMineral(colonyMin.mineralId)
-               html += `<div>${colonyMin.colonyTons} tons of ${mineral.name}</div>`           
-            }
+    if (transientState.colonyChoices != 0) {
+        let coloniesMinerals = [];
+        coloniesMinerals = await getColonyMineralArray(transientState.colonyChoices);
+        for (const colonyMin of coloniesMinerals) {
+            const mineral = await getMineral(colonyMin.mineralId)
+            html += `<div>${colonyMin.colonyTons} tons of ${mineral.name}</div>`           
         }
+    }
         
 
     return html

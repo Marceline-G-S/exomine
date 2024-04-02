@@ -20,7 +20,7 @@ export const spaceCartContainer = async () => {
     const facilityMineralsArray = await getFacilityMinerals.json()
 
     let html = `<div class="spaceCartContainer">`
-    html += `<h1>space cart:</h1>`
+    html += `<h2>Space Cart:</h2>`
     if (transientState.facilityMineralsChoices != 0) {
         html += `${mineralArray[facilityMineralsArray[transientState.facilityMineralsChoices - 1].mineralId - 1].name}`
     }

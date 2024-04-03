@@ -17,16 +17,16 @@ export const facilitiesList = async () => {
     const transientState = getTransientState();
     let facilitiesHTML = ` <label for="facilities">Choose a facility:</label>
     
-                            <select name="facilities" id="facilities">`
+                            <select name="facilities" id="facilities">
+                            <option value="0">Select a Facility</option>`
 
     for (const facility of facilityArray) {
-
-
-        (facility.id == transientState.facilityChoices) ?
-            (facilitiesHTML += `<option selected value="${facility.id}">${facility.name}</option>`) :
-            (facilitiesHTML += `<option value="${facility.id}">${facility.name}</option>`)
+        if (facility.activeStatus === true){
+            (facility.id == transientState.facilityChoices) ?
+                (facilitiesHTML += `<option selected value="${facility.id}">${facility.name}</option>`) :
+                (facilitiesHTML += `<option value="${facility.id}">${facility.name}</option>`)
+            }
     }
-
 
 
 

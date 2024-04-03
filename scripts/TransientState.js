@@ -37,7 +37,13 @@ export const setGovernorChoices = async (chosenGovernor) => {
     transientState.governorChoices = chosenGovernor
     const response = await fetch('http://localhost:8088/governors');
     const govArrayFromDatabase = await response.json();
-    transientState.colonyChoices = govArrayFromDatabase[chosenGovernor - 1].colonyId
+
+    if (chosenGovernor == 0){
+        transientState.governorChoices = 0;
+    }else {
+        transientState.governorChoices = chosenGovernor
+    }
+    
 
     console.log(transientState)
 }
@@ -45,6 +51,7 @@ export const setGovernorChoices = async (chosenGovernor) => {
 // Functions to modify each property of transient state
 export const setFacilityChoices = (chosenFacility) => {
     transientState.facilityChoices = chosenFacility
+    transientState.facilityMineralsChoices = 0
     console.log(transientState)
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
@@ -53,7 +60,11 @@ export const setColony = async (chosenGovernor) => {
     const response = await fetch('http://localhost:8088/governors');
     const govArrayFromDatabase = await response.json();
 
-    transientState.colonyChoices = govArrayFromDatabase[chosenGovernor - 1].colonyId
+    if (chosenGovernor == 0){
+        transientState.colonyChoices = 0;
+    }else {
+        transientState.colonyChoices = govArrayFromDatabase[chosenGovernor - 1].colonyId
+    }
     console.log(transientState)
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }

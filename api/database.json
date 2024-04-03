@@ -40,13 +40,13 @@
       "id": 1,
       "colonyId": 1,
       "mineralId": 1,
-      "colonyTons": 10001
+      "colonyTons": 10007
     },
     {
       "id": 2,
       "colonyId": 1,
       "mineralId": 2,
-      "colonyTons": 20025
+      "colonyTons": 20028
     },
     {
       "id": 3,
@@ -58,7 +58,7 @@
       "id": 4,
       "colonyId": 1,
       "mineralId": 4,
-      "colonyTons": 4
+      "colonyTons": 7
     },
     {
       "id": 5,
@@ -75,12 +75,6 @@
     {
       "id": 7,
       "colonyId": 2,
-      "mineralId": 3,
-      "colonyTons": 1
-    },
-    {
-      "id": 8,
-      "colonyId": 0,
       "mineralId": 3,
       "colonyTons": 1
     }
@@ -108,19 +102,19 @@
       "id": 1,
       "mineralId": 1,
       "facilityId": 1,
-      "facilityTons": 999
+      "facilityTons": 993
     },
     {
       "id": 2,
       "mineralId": 2,
       "facilityId": 2,
-      "facilityTons": 1964
+      "facilityTons": 1961
     },
     {
       "id": 3,
       "mineralId": 4,
       "facilityId": 2,
-      "facilityTons": 1985
+      "facilityTons": 1982
     },
     {
       "id": 4,

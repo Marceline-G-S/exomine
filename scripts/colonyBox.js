@@ -12,7 +12,7 @@ export const colonyBoxContainer = async () => {
     let html = `<h2>Colony Minerals</h2>`
     if (transientState.colonyChoices != 0) {
         const colony = await getColony(transientState.colonyChoices)
-        html = `<h2>Facitlity Minerals for ${colony.name} </h2>`
+        html = `<h2>Colony Minerals for ${colony.name} </h2>`
 
     }
 

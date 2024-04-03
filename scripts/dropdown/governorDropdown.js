@@ -18,13 +18,15 @@ export const GovernorsList = async () => {
 
     let governorsHTML = ` <label for="governors">Choose a governor:</label>
     
-                            <select name="governors" id="governors">`
+                            <select name="governors" id="governors">
+                            <option value="0">Select a Governor</option>`
 
     for (const governor of govArrayFromDatabase) {
-        (governor.id == transientState.governorChoices) ?
-            (governorsHTML += `<option selected value="${governor.id}">${governor.name}</option>`) :
-            (governorsHTML += `<option value="${governor.id}">${governor.name}</option>`)
-
+            if (governor.activeStatus === true){
+                (governor.id == transientState.governorChoices) ?
+                    (governorsHTML += `<option selected value="${governor.id}">${governor.name}</option>`) :
+                    (governorsHTML += `<option value="${governor.id}">${governor.name}</option>`)
+        }
     }
 
 

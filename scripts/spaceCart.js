@@ -1,7 +1,8 @@
 import { getTransientState } from "./TransientState.js"
 
 const handleSpacePurchase = async (clickEvent) => {
-    if (clickEvent.target.id === "purchaseButton") {
+    const transientState = getTransientState()
+    if ((clickEvent.target.id === "purchaseButton") && (transientState.governorChoices != 0) && (transientState.facilityChoices != 0) && (transientState.facilityMineralsChoices != 0)) {
         putMineralJoinTables()
     }
 }

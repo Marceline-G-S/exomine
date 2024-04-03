@@ -34,10 +34,13 @@ export const facilityContainer = async () => {
 
         for (const facilityMinerals of facilityMineralsArray) {
 
-            if (facilityMinerals.facilityId === transientState.facilityChoices) {
+            if ((facilityMinerals.facilityId === transientState.facilityChoices) && (facilityMinerals.facilityTons > 0)) {
 
-                HTML += `<input type='radio' name='mineralChoice' value='${facilityMinerals.id}' /> ${mineralArray[facilityMinerals.mineralId - 1].name}`
+                (facilityMinerals.id == transientState.facilityMineralsChoices) ?
+                    (HTML += `<input checked type='radio' name='mineralChoice' value='${facilityMinerals.id}' /> ${facilityMinerals.facilityTons} tons of ${mineralArray[facilityMinerals.mineralId - 1].name}`) :
+                    (HTML += `<input type='radio' name='mineralChoice' value='${facilityMinerals.id}' /> ${facilityMinerals.facilityTons} tons of ${mineralArray[facilityMinerals.mineralId - 1].name}`)
 
+                
             }
         }
     }

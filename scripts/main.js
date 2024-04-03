@@ -11,7 +11,7 @@ const container = document.querySelector("#container")
 
 
 
-const render = async () => {
+const renderPage = async () => {
   // const governorsHTML = await GovernorsList();
   // const facilitiesHTML = await facilitiesList();
   // Call the functions created inside of other module
@@ -30,6 +30,6 @@ const render = async () => {
 }
 
 
-document.addEventListener("stateChanged", render)
+document.addEventListener("stateChanged", renderPage)
 
-render()
+renderPage()
